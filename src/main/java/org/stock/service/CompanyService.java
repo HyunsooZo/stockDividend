@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
+import org.stock.exception.imple.NoCompanyException;
 import org.stock.model.Company;
 import org.stock.model.ScrapResult;
 import org.stock.persist.entity.CompanyEntity;
@@ -16,6 +17,7 @@ import org.stock.persist.entity.DividendEntity;
 import org.stock.scraper.Scraper;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -78,5 +80,17 @@ public class CompanyService {
         return companyEntities.stream()
                 .map(e->e.getName())
                 .collect(Collectors.toList());
+    }
+
+    public String deleteCompany(String ticker) {
+        var company = this.companyRepository.findByTicker(ticker)
+                .orElseThrow(()-> new NoCompanyException());
+
+        this.dividendRepository.deleteAllByCompanyId(company.getId());
+        this.companyRepository.delete(company);
+
+        this.deleteAutocompleteKeyword(company.getName());
+
+        return company.getName();
     }
 }

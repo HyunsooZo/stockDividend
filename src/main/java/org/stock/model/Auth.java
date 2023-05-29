@@ -21,9 +21,9 @@ public class Auth {
 
         public MemberEntity toEntity(){
             return MemberEntity.builder()
-                    .username(username)
-                    .password(password)
-                    .roles(roles)
+                    .username(this.username)
+                    .password(this.password)
+                    .roles(this.roles)
                     .build();
         }
     }
