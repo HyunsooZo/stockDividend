@@ -39,3 +39,4 @@
 19:22:50.379 [http-nio-8080-exec-4] INFO  o.s.security.JwtAuthenticationFilter - [hyunsoo22] -> /company
 19:23:17.214 [http-nio-8080-exec-8] INFO  org.stock.web.AuthController - user login -> hyunsoo
 19:23:24.946 [http-nio-8080-exec-9] INFO  o.s.security.JwtAuthenticationFilter - [hyunsoo] -> /company
+21:50:31.138 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h25m3s509ms).
