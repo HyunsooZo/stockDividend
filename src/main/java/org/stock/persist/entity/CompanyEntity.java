@@ -1,4 +1,4 @@
-package org.stock.persist;
+package org.stock.persist.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
