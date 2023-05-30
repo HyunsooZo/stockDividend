@@ -1,42 +1,498 @@
-19:21:54.853 [main] INFO  org.stock.Application - Starting Application using Java 11.0.17 on HYUNSOOui-MacBook-Pro.local with PID 10224 (/Users/hyunsoojo/Desktop/dev/stockDividend/build/classes/java/main started by hyunsoojo in /Users/hyunsoojo/Desktop/dev/stockDividend)
-19:21:54.859 [main] INFO  org.stock.Application - No active profile set, falling back to default profiles: default
-19:21:55.778 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-19:21:55.781 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-19:21:56.000 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 211 ms. Found 3 JPA repository interfaces.
-19:21:56.021 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-19:21:56.022 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-19:21:56.042 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.stock.persist.CompanyRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-19:21:56.045 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.stock.persist.DividendRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-19:21:56.045 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.stock.persist.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-19:21:56.045 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-19:21:56.455 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@f425231' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-19:21:56.458 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-19:21:56.770 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-19:21:56.782 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-19:21:56.783 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-19:21:56.783 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
-19:21:56.872 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-19:21:56.872 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1929 ms
-19:21:56.928 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-19:21:57.111 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-19:21:57.119 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:stock'
-19:21:57.295 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-19:21:57.339 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
-19:21:57.478 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-19:21:57.599 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-19:21:58.269 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-19:21:58.278 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-19:21:58.873 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-19:21:59.264 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/h2-console/**'] with []
-19:21:59.299 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2530baf6, org.springframework.security.web.context.SecurityContextPersistenceFilter@5c59dfc7, org.springframework.security.web.header.HeaderWriterFilter@4f2a9903, org.springframework.security.web.authentication.logout.LogoutFilter@1d722bff, org.stock.security.JwtAuthenticationFilter@772bc4c9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ef63b6d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4125bc3c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e7797db, org.springframework.security.web.session.SessionManagementFilter@43f5b014, org.springframework.security.web.access.ExceptionTranslationFilter@520eb9f8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@488c6c98]
-19:21:59.759 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-19:21:59.786 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-19:21:59.802 [main] INFO  org.stock.Application - Started Application in 5.907 seconds (JVM running for 6.404)
-19:22:36.200 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-19:22:36.201 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-19:22:36.204 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-19:22:41.552 [http-nio-8080-exec-3] INFO  org.stock.web.AuthController - user login -> hyunsoo22
-19:22:50.379 [http-nio-8080-exec-4] INFO  o.s.security.JwtAuthenticationFilter - [hyunsoo22] -> /company
-19:23:17.214 [http-nio-8080-exec-8] INFO  org.stock.web.AuthController - user login -> hyunsoo
-19:23:24.946 [http-nio-8080-exec-9] INFO  o.s.security.JwtAuthenticationFilter - [hyunsoo] -> /company
-21:50:31.138 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h25m3s509ms).
+00:50:47.901 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m16s27ms).
+00:58:01.400 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m42s983ms).
+01:17:59.905 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m28s502ms).
+01:34:30.007 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m30s102ms).
+01:53:27.288 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m25s785ms).
+02:09:38.229 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m40s941ms).
+03:03:58.585 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m50s354ms).
+03:58:10.496 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m41s909ms).
+04:41:02.794 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=39m52s274ms).
+05:06:31.710 [ThreadPoolTaskScheduler-1] INFO  org.stock.scheduler.ScraperScheduler - scraping is started 
+05:06:31.931 [ThreadPoolTaskScheduler-1] INFO  org.stock.scheduler.ScraperScheduler - scraped company -> 3M Company
+06:16:34.701 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=29m28s593ms).
+06:31:35.418 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m687ms).
+06:42:51.583 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m16s164ms).
+07:01:41.968 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m20s380ms).
+07:55:58.577 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m46s606ms).
+08:41:32.431 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m3s853ms).
+14:13:09.106 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h13m35s179ms).
+15:45:00.428 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h31m21s946ms).
+15:46:46.083 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m45s654ms).
+15:47:51.914 [lettuce-eventExecutorLoop-1-1] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:47:51.972 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:48:01.084 [lettuce-eventExecutorLoop-1-5] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:48:01.086 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:48:09.285 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:48:09.289 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:48:25.683 [lettuce-eventExecutorLoop-1-7] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:48:25.696 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:48:55.790 [lettuce-eventExecutorLoop-1-3] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:48:55.793 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:49:25.883 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:49:25.887 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:49:55.983 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:49:55.986 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:50:26.083 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:50:26.088 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:50:56.182 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:50:56.186 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:51:26.282 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:51:26.287 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:51:56.386 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:51:56.389 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:52:26.484 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:52:26.488 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:52:56.586 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:52:56.591 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:53:26.681 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:53:26.684 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:53:56.783 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:53:56.787 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:54:26.886 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:54:26.891 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:54:56.981 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:54:56.986 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:55:27.083 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:55:27.087 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:55:57.181 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:55:57.185 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:56:27.281 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:56:27.286 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:56:57.382 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:56:57.388 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:57:27.482 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:57:27.484 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:57:57.585 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:57:57.591 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:58:27.681 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:58:27.686 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:58:57.781 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:58:57.786 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:59:27.880 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:59:27.883 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+15:59:57.979 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+15:59:57.983 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:00:28.082 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:00:28.091 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:00:58.179 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:00:58.184 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:01:28.391 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:01:28.395 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:01:58.492 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:01:58.498 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:02:28.597 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:02:28.600 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:02:58.695 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:02:58.698 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:03:28.798 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:03:28.802 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:03:58.900 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:03:58.902 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:04:29.000 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:04:29.004 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:04:59.100 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:04:59.102 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:05:29.202 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:05:29.204 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:05:59.299 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:05:59.305 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:06:29.402 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:06:29.413 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:06:59.512 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:06:59.543 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:07:29.607 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:07:29.611 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:07:59.703 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:07:59.710 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:08:29.804 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:08:29.809 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:08:59.905 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:08:59.911 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:09:30.005 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:09:30.008 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:10:00.108 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:10:00.111 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:10:30.212 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:10:30.223 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:11:00.309 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:11:00.315 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:11:30.411 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:11:30.414 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:12:00.513 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:12:00.517 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:12:30.615 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:12:30.620 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:13:00.714 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:13:00.717 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:13:30.816 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:13:30.820 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:14:00.916 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:14:00.925 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:14:31.018 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:14:31.022 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:15:01.115 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:15:01.120 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:15:31.221 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:15:31.227 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:16:01.320 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:16:01.323 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:16:31.420 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:16:31.424 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:17:01.522 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:17:01.527 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:17:31.624 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:17:31.628 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:18:01.723 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:18:01.727 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:18:31.831 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:18:31.835 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:19:01.927 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:19:01.932 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:19:32.024 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:19:32.028 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:20:02.125 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:20:02.127 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:20:32.229 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:20:32.235 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:21:02.258 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:21:02.260 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:21:32.359 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:21:32.363 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:22:02.453 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:22:02.457 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:22:32.555 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:22:32.558 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:23:02.661 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:23:02.664 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:23:32.751 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:23:32.754 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:24:02.849 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:24:02.857 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:24:32.956 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:24:32.958 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:25:03.057 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:25:03.060 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:25:33.148 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:25:33.151 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:26:03.255 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:26:03.259 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:26:33.346 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:26:33.348 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:27:03.453 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:27:03.456 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:27:33.543 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:27:33.548 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:28:03.643 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:28:03.646 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:28:33.744 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:28:33.749 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:29:03.845 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:29:03.849 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:29:33.941 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:29:33.945 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:30:04.039 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:30:04.043 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:30:34.140 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:30:34.144 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:31:04.237 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:31:04.241 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:31:34.340 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:31:34.343 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:32:04.437 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:32:04.440 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:32:34.535 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:32:34.544 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:33:04.636 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:33:04.638 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:33:34.734 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:33:34.738 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:34:04.837 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:34:04.839 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:34:34.935 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:34:34.939 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:35:05.034 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:35:05.037 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:35:35.130 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:35:35.134 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:36:05.230 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:36:05.232 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:36:35.329 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:36:35.333 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:37:05.431 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:37:05.433 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:37:35.531 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:37:35.534 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:38:05.630 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:38:05.632 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:38:35.726 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:38:35.729 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:39:05.825 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:39:05.827 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:39:35.928 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:39:35.933 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:40:06.027 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:40:06.030 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:40:36.122 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:40:36.129 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:41:06.226 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:41:06.235 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:41:36.322 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:41:36.326 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:42:06.421 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:42:06.425 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:42:36.519 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:42:36.526 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:43:06.622 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:43:06.626 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:43:36.718 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:43:36.721 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:44:06.815 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:44:06.823 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:44:36.916 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:44:36.919 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:45:07.014 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:45:07.017 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:45:37.117 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:45:37.120 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:46:07.214 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:46:07.219 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:46:37.310 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:46:37.313 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:47:07.410 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:47:07.415 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:47:37.512 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:47:37.514 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:48:07.608 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:48:07.611 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:48:37.709 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:48:37.712 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:49:07.809 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:49:07.813 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:49:37.908 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:49:37.912 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:50:08.006 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:50:08.009 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:50:38.105 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:50:38.110 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:51:08.207 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:51:08.216 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:51:38.304 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:51:38.308 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:52:08.406 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:52:08.412 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:52:38.504 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:52:38.509 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:53:08.602 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:53:08.605 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:53:38.700 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:53:38.705 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:54:08.798 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:54:08.808 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:54:38.901 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:54:38.905 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:55:09.001 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:55:09.004 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:55:39.100 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:55:39.104 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:56:09.198 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:56:09.200 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:56:39.294 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:56:39.298 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:57:09.393 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:57:09.395 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:57:39.492 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:57:39.495 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:58:09.591 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:58:09.595 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:58:39.693 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:58:39.697 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:59:09.791 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:59:09.795 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+16:59:14.299 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Retrograde clock change detected (housekeeper delta=27s896ms), soft-evicting connections from pool.
+16:59:37.789 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+16:59:37.791 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:00:07.886 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:00:07.890 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:00:37.987 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:00:37.991 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:01:08.085 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:01:08.088 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:01:38.184 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:01:38.188 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:02:08.283 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:02:08.285 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:02:38.385 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:02:38.387 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:03:08.484 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:03:08.486 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:03:38.579 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:03:38.582 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:04:08.678 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:04:08.686 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:04:38.779 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:04:38.783 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:05:08.880 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:05:08.883 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:05:38.979 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:05:38.982 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:06:09.076 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:06:09.078 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:06:39.177 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:06:39.180 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:07:09.274 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:07:09.278 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:07:39.375 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:07:39.378 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:08:09.475 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:08:09.479 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:08:39.570 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:08:39.573 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:09:09.670 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:09:09.677 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:09:39.770 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:09:39.772 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:10:09.868 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:10:09.870 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:10:39.971 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:10:39.983 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:11:10.068 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:11:10.070 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:11:40.168 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:11:40.171 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:12:10.268 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:12:10.273 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:12:40.364 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:12:40.367 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:13:10.462 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:13:10.465 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:13:40.563 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:13:40.566 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:14:10.665 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:14:10.669 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:14:40.760 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:14:40.766 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:15:10.857 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:15:10.862 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:15:40.955 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:15:40.960 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:16:11.052 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:16:11.055 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:16:41.156 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:16:41.160 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:17:11.249 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:17:11.255 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:17:41.348 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:17:41.351 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:18:11.452 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:18:11.454 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:18:41.550 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:18:41.552 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:19:11.648 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:19:11.652 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:19:41.743 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:19:41.747 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:20:11.846 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:20:11.850 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:20:41.944 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:20:41.950 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:21:12.042 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:21:12.045 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:21:42.142 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:21:42.144 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:22:12.243 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:22:12.246 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:22:42.341 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:22:42.343 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:23:12.436 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:23:12.439 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:23:42.538 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:23:42.541 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:24:12.638 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:24:12.643 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:24:42.732 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:24:42.737 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:25:12.833 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:25:12.837 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:25:42.935 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:25:42.939 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:26:13.032 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:26:13.035 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:26:43.129 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:26:43.132 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:27:13.228 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:27:13.230 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:27:43.326 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:27:43.328 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:28:13.430 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:28:13.435 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:28:43.527 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:28:43.532 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:29:13.625 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:29:13.630 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:29:45.820 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:29:45.823 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:30:15.920 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:30:15.925 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:30:46.018 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:30:46.023 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:31:16.119 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:31:16.122 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:31:46.217 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:31:46.220 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:32:16.316 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:32:16.318 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:32:46.416 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:32:46.421 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:33:16.513 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:33:16.516 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:33:46.611 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:33:46.616 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:34:16.711 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:34:16.715 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:34:46.812 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:34:46.814 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:35:16.911 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:35:16.913 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:35:47.010 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:35:47.015 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:36:17.107 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:36:17.109 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:36:47.206 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:36:47.209 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:37:17.305 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:37:17.312 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:37:47.406 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:37:47.409 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:38:17.505 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:38:17.511 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:38:47.602 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:38:47.606 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:39:17.703 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:39:17.725 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:39:47.802 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:39:47.808 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:40:17.901 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:40:17.906 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:40:48.001 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:40:48.012 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:41:18.097 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:41:18.101 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:41:48.196 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:41:48.201 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:42:18.297 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:42:18.301 [lettuce-nioEventLoop-6-3] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:42:48.398 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:42:48.401 [lettuce-nioEventLoop-6-4] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:43:18.491 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:43:18.496 [lettuce-nioEventLoop-6-5] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:43:48.593 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:43:48.596 [lettuce-nioEventLoop-6-6] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:44:18.691 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:44:18.697 [lettuce-nioEventLoop-6-7] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:44:48.791 [lettuce-eventExecutorLoop-1-4] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:44:48.796 [lettuce-nioEventLoop-6-8] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:45:14.192 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Retrograde clock change detected (housekeeper delta=27s638ms), soft-evicting connections from pool.
+17:45:16.527 [lettuce-eventExecutorLoop-1-6] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:45:16.533 [lettuce-nioEventLoop-6-1] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+17:45:46.623 [lettuce-eventExecutorLoop-1-8] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
+17:45:46.645 [lettuce-nioEventLoop-6-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
